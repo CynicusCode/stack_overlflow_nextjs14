@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    h1.bold {
+        @apply text-[30px] font-bold text-red-500;
+    }
+}
