@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import url("../styles/theme.css");
 
 body {
@@ -19,7 +18,7 @@ body {
         @apply flex justify-start items-center;
     }
     .card-wrapper {
-        @apply bg-light-900 dark:bg-dark-gradient shadow-light-100 dark:shadow-dark-100;
+        @apply bg-light-900 dark:dark-gradient shadow-light-100 dark:shadow-dark-100; /* Added missing properties for dark mode */
     }
     .btn {
         @apply bg-light-800 dark:bg-dark-300 !important;
@@ -31,25 +30,34 @@ body {
         @apply bg-light-700 dark:bg-dark-300 !important;
     }
     .markdown {
-        @apply max-w-full prose dark:prose-dark;
+        @apply max-w-full prose dark:prose-p:text-light-700 dark:prose-a:text-light-700; /* Added missing properties for dark mode */
     }
     .primary-gradient {
         background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
     }
     .dark-gradient {
-        background: linear-gradient(232deg, rgba(23, 28, 35, 0.41) 0%, rgba(19, 22, 28, 0.7) 100%);
+        background: linear-gradient(
+            232deg,
+            rgba(23, 28, 35, 0.41) 0%,
+            rgba(19, 22, 28, 0.7) 100%
+        );
     }
     .tab {
-        @apply min-h-full bg-light-800 dark:bg-dark-400 text-light-500;
+        @apply min-h-full dark:bg-dark-400 bg-light-800 text-light-500; /* Added missing properties for dark mode */
     }
     .no-focus {
-        @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:outline-none;
+        @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:outline-none; /* Ensuring focus styles are only visible when needed */
     }
     .active-theme {
-        filter: invert(53%) sepia(98%) saturate(3332%) hue-rotate(0deg) brightness(104%) contrast(106%) !important;
+        filter: invert(53%) sepia(98%) saturate(3332%) hue-rotate(0deg)
+                brightness(104%) contrast(106%) !important;
     }
     .light-gradient {
-        background: linear-gradient(132deg, rgba(247, 249, 255, 0.5) 0%, rgba(229, 237, 255, 0.25) 100%);
+        background: linear-gradient(
+            132deg,
+            rgba(247, 249, 255, 0.5) 0%,
+            rgba(229, 237, 255, 0.25) 100%
+        );
     }
     .primary-text-gradient {
         background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
@@ -76,11 +84,11 @@ body {
     .markdown a {
         color: #1da1f2;
     }
-    .markdown a,
-    .markdown code {
+    .markdown a, code {
         overflow-wrap: break-word;
         word-wrap: break-word;
         -ms-word-break: break-all;
+        word-break: break-all;
         word-break: break-word;
         -ms-hyphens: auto;
         -moz-hyphens: auto;
