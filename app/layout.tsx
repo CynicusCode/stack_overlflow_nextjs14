@@ -1,8 +1,8 @@
-import { ClerkProvider } from '@clerk/nextjs'
-import './globals.css'
+import '../styles/globals.css'
 import React from 'react'
-import { Inter, Space_Grotesk } from 'next/font/google'
 import type { Metadata } from 'next'
+import { Inter, Space_Grotesk } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeProvider } from '@/context/ThemeProvider'
 
 const inter = Inter({
@@ -10,18 +10,19 @@ const inter = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
   variable: '--font-inter'
 })
+
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-spaceGrotesk'
+  variable: '--font-inter'
 })
 
 export const metadata: Metadata = {
-  title: 'Devflow',
+  title: 'DevOverflow',
   description:
-    'Devflow is a platform for developers to share their projects and get feedback from other developers.',
+    'A community-driven plartform for asking and answering programming questions get help, share knowledge, and collaborate with developers from aroud the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.',
   icons: {
-    icon: '/assets/images/site-logo.svg'
+    icon: '/assets/images/site-logo-svg'
   }
 }
 
@@ -36,7 +37,7 @@ export default function RootLayout({
         <ClerkProvider
           appearance={{
             elements: {
-              fromButtonPrimary: 'primary-gradient',
+              formButtonPrimary: 'primary-gradient',
               footerActionLink: 'primary-text-gradient hover:text-primary-500'
             }
           }}

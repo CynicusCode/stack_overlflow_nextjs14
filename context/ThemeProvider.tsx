@@ -28,18 +28,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     handleThemeChange()
-  }, []) // Empty dependency array
-  console.log('Mode: ', mode)
-
-  useEffect(() => {
-    if (mode === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [mode]) // Dependency on 'mode'
-
-  console.log('Mode2: ', mode)
+  }, [mode])
 
   return (
     <ThemeContext.Provider value={{ mode, setMode }}>
